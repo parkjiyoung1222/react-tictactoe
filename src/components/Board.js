@@ -206,9 +206,9 @@ const status = winner[0] ? `Winner: ${winner[0]}` : `Next: ${xIsNext ? "X" : "O"
       <div className="board-wrapper">
         {renderBoard()}
       </div>
-      {/*<div className="history">
+      {<div className="history">
          {moves} 
-      </div>*/}
+      </div>}
     </div>
   );
   
