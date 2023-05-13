@@ -1,0 +1,8 @@
+.game {
+  display: flex;
+  height:100vh;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;  
+}
+
