@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./Board.css";
 
 function Board() {
@@ -15,8 +15,7 @@ function Board() {
     const value = parseInt(event.target.value);
     setRows(value);
     setCols(value);
-    setHistory([{ squares: Array(value*value).fill(null)}]);
-    
+     
     if(value===5 || value===3){ 
       setWinningSize(3);      
     }else{
@@ -24,9 +23,15 @@ function Board() {
     }
   }
 
-  const current = history[stepNumber];
+  // 보드판 사이즈 변경시에만 초기화
+  useEffect(() => {
+    const startHistory = [{ squares: Array(rows * cols).fill(null) }];
+    setHistory(startHistory);
+    setStepNumber(0);
+  }, [rows, cols]);
   
- 
+  const current = history[stepNumber];
+   
   const handleClick = (i) => {
     //const newsquares = squares.slice();
     const newHistory = history.slice(0,stepNumber +1);

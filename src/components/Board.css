@@ -54,7 +54,10 @@
   margin-top: 16px;
   text-align: center;
   overflow: auto;
+  height: 200px; /* 히스토리 영역의 높이를 설정합니다. */
+  overflow-y: auto; /* 스크롤바를 추가합니다. */
  }
+
  .historybtn {
   width:200px;
   text-decoration: none;
